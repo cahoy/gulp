@@ -2,7 +2,7 @@
 
 import logging
 from functools import wraps
-from time import time
+import time as t
 
 __author__ = 'Cahyo Primawidodo'
 __email__ = 'cahyo.p@gmail.com'
@@ -25,7 +25,10 @@ def debug_lvl(lvl=logging.DEBUG):
 def time_profile(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
+        start_t = t.time()
         y = f(*args, **kwargs)
+        end_t = t.time()
+        print('{:5.3f} usec'.format(1000000 * (end_t-start_t)))
         return y
     return wrapper
 
@@ -39,6 +42,7 @@ if __name__ == '__main__':
         logging.debug('log x enabled')
         print('running x')
 
+    @time_profile
     def y(*args, **kwargs):
         logging.debug('log y enabled')
         print('running y')
