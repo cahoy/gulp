@@ -20,7 +20,7 @@ test_requirements = [
 setup(
     name='gulp',
     version='0.1.0',
-    description="decorator to make debugging easier.",
+    description="Debug happily with this python module.",
     long_description=readme + '\n\n' + history,
     author="Cahyo Primawidodo",
     author_email='cahyo.p@gmail.com',
@@ -34,7 +34,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords='gulp',
+    keywords='gulp, debug, decorator, time, profile',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
